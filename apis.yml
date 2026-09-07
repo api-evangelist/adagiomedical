@@ -1,7 +1,17 @@
 aid: adagiomedical
-name: Adagiomedical
-description: 'Adagiomedical is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Adagio Medical
+description: >-
+  Adagio Medical, Inc. is a Laguna Hills, California medical device company and an operating
+  subsidiary of Adagio Medical Holdings, Inc. (NASDAQ: ADGM). It develops catheter-based
+  cardiac ablation systems built on its proprietary Ultra-Low Temperature Cryoablation (ULTC)
+  platform and an emerging Pulsed Field Cryoablation (PFCA) platform, designed to create large,
+  durable, transmural lesions for the treatment of ventricular tachycardia, atrial fibrillation
+  and atrial flutter. Its CE-marked vCLAS Cryoablation System holds FDA Breakthrough Device
+  Designation and is under U.S. evaluation in the FULCRUM-VT pivotal IDE study. Adagio Medical
+  sells regulated physical devices to hospitals and electrophysiology labs; it publishes no
+  public API, developer portal, SDK or machine-readable contract. It does publish a coordinated
+  product-security vulnerability disclosure policy.
+image: https://adagiomedical.com/adagio-logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/adagiomedical/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +22,12 @@ created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Medical Devices
+- Health
+- Cardiology
+- Medical Technology
+- Cryoablation
+- Electrophysiology
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,45 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/adagiomedical-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/adagiomedical
+  url: https://adagiomedical.com/
+- type: Support
+  url: https://adagiomedical.com/us/contact
+- type: PrivacyPolicy
+  url: https://adagiomedical.com/us/privacy-policy
+- type: TermsOfService
+  url: https://adagiomedical.com/us/terms-of-use
+- type: Security
+  url: https://adagiomedical.com/us/product-security
+- type: VulnerabilityDisclosure
+  url: security/adagiomedical-vulnerability-disclosure.yml
+- type: LLMsTxt
+  url: llms/adagiomedical-llms.txt
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Adagio Medical is a NASDAQ-listed cardiac-ablation device manufacturer whose entire public web
+    presence is 18 marketing, clinical-evidence and careers pages across /us and /eu; the only
+    /api path on the site is the Next.js internal route that its own robots.txt disallows, and
+    every contract-discovery probe (openapi.json, swagger.json, apis.json, llms.txt, agent-card,
+    OAuth/OIDC discovery) returned 404 on every host.
+  evidence:
+  - url: https://adagiomedical.com/us/sitemap.xml
+    status: 200
+  - url: https://adagiomedical.com/openapi.json
+    status: 404
+  - url: https://adagiomedical.com/.well-known/agent-card.json
+    status: 404
+  - url: https://adagiomedical.com/llms.txt
+    status: 404
+  - url: https://api.github.com/orgs/adagiomedical
+    status: 404
+  checked: '2026-09-06'

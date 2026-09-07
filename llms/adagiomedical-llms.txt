@@ -1,0 +1,49 @@
+# Adagio Medical
+
+> Adagio Medical, Inc. is a Laguna Hills, California medical device company and an operating
+> subsidiary of Adagio Medical Holdings, Inc. (NASDAQ: ADGM). It develops catheter-based cardiac
+> ablation systems on its Ultra-Low Temperature Cryoablation (ULTC) platform and an emerging
+> Pulsed Field Cryoablation (PFCA) platform, for ventricular tachycardia, atrial fibrillation and
+> atrial flutter. Its CE-marked vCLAS Cryoablation System holds FDA Breakthrough Device
+> Designation and is under U.S. evaluation in the FULCRUM-VT pivotal IDE study.
+
+## API surface
+
+Adagio Medical publishes **no public API**. As of 2026-09-06 there is no developer portal, no API
+reference, no OpenAPI/AsyncAPI/GraphQL/gRPC/WSDL contract, no SDK in any public package registry,
+no MCP server, no A2A agent card and no `/.well-known/` discovery document on any Adagio Medical
+host. The company sells regulated physical devices to hospitals and electrophysiology labs;
+software is embedded in the console and catheter systems, not offered as a developer product.
+The only `/api` namespace on the corporate site is the site's own Next.js internal route, which
+`robots.txt` disallows.
+
+Probe record: `well-known/adagiomedical-well-known.yml`
+
+## Company
+
+- [Adagio Medical](https://adagiomedical.com/): Corporate site (region-gated: `/us` and `/eu`)
+- [About Adagio Medical](https://adagiomedical.com/us/about): Company, mission, leadership, board
+- [vCLAS Cryoablation System](https://adagiomedical.com/us/products-vclas): Flagship product
+- [Fundamentals of ULTA](https://adagiomedical.com/us/technology-ulta): Ultra-low temperature ablation technology
+- [Fundamentals of PFCA](https://adagiomedical.com/us/technology-pfca): Pulsed field cryoablation technology
+- [Clinical studies](https://adagiomedical.com/us/clinical-evidence-studies): FULCRUM-VT and other trials
+- [Investor relations](https://investors.adagiomedical.com/): Adagio Medical Holdings, Inc. (NASDAQ: ADGM)
+- [Careers](https://adagiomedical.com/us/careers)
+- [Contact](https://adagiomedical.com/us/contact)
+
+## Security and legal
+
+- [Product Security](https://adagiomedical.com/us/product-security): Coordinated vulnerability
+  disclosure policy. Report to `product_security@adagiomedical.com`; receipt confirmed within five
+  business days. No bug bounty, no `/.well-known/security.txt`.
+- [Privacy Policy](https://adagiomedical.com/us/privacy-policy)
+- [Terms of Use](https://adagiomedical.com/us/terms-of-use)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/adagiomedical/refs/heads/main/apis.yml)
+- [Vulnerability disclosure](https://raw.githubusercontent.com/api-evangelist/adagiomedical/refs/heads/main/security/adagiomedical-vulnerability-disclosure.yml)
+- [Domain security probe](https://raw.githubusercontent.com/api-evangelist/adagiomedical/refs/heads/main/security/adagiomedical-domain-security.yml)
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/adagiomedical/refs/heads/main/well-known/adagiomedical-well-known.yml)
+
+<!-- generated: 2026-09-06 | method: generated | source: apis.yml + repo artifacts + probed public pages -->

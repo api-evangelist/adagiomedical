@@ -1,0 +1,72 @@
+generated: '2026-09-06'
+method: probed
+source: live HTTPS probes, 2026-09-06
+note: >-
+  Every named /.well-known/ path plus the APIs.json root paths were probed on all three hosts the
+  record knows. NOTHING was found on any host, so no WellKnown and no SecurityTxt pointer is
+  emitted — this file records a verified absence, not a surface. adagiomedical.com and
+  www.adagiomedical.com are one Next.js/Vercel origin that answers 404 with a 14,124-byte HTML
+  page for every miss. investors.adagiomedical.com is a hosted investor-relations site behind a
+  WAF: it answers 404 for extension-less paths and 403 (Access Denied) for any *.json path,
+  including the negative control, so no 2xx was observed there either.
+  Adagio Medical DOES publish a coordinated vulnerability disclosure policy, but as an ordinary
+  web page at /us/product-security rather than as an RFC 9116 security.txt — captured in
+  security/adagiomedical-vulnerability-disclosure.yml.
+hit_count: 0
+path_echo_control: passed
+soft_404_control:
+  path: /.well-known/adagiomedical-negative-control-7f3ab91c.json
+  adagiomedical.com: {status: 404, bytes: 14124}
+  www.adagiomedical.com: {status: 404, bytes: 14124}
+  investors.adagiomedical.com: {status: 403, bytes: 465}
+  verdict: no host returned 2xx on a path that cannot exist
+hosts:
+- host: https://adagiomedical.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 404, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+  - {path: /.well-known/api-catalog, status: 404, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+  - {path: /.well-known/agent-card.json, status: 404, file: null}
+  - {path: /.well-known/agent.json, status: 404, file: null}
+  - {path: /.well-known/aauth-resource.json, status: 404, file: null}
+  - {path: /.well-known/apis.json, status: 404, file: null}
+  - {path: /apis.json, status: 404, file: null}
+  - {path: /apis.yml, status: 404, file: null}
+  - {path: /llms.txt, status: 404, file: null}
+- host: https://www.adagiomedical.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 404, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+  - {path: /.well-known/api-catalog, status: 404, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+  - {path: /.well-known/agent-card.json, status: 404, file: null}
+  - {path: /.well-known/agent.json, status: 404, file: null}
+  - {path: /.well-known/aauth-resource.json, status: 404, file: null}
+  - {path: /.well-known/apis.json, status: 404, file: null}
+  - {path: /apis.json, status: 404, file: null}
+  - {path: /apis.yml, status: 404, file: null}
+  - {path: /llms.txt, status: 404, file: null}
+- host: https://investors.adagiomedical.com
+  note: >-
+    WAF-fronted investor-relations host. Probed with a full browser User-Agent and navigation
+    headers; the root itself returns 200, so the 403s below are an edge policy on *.json paths,
+    not a dead host.
+  documents:
+  - {path: /.well-known/security.txt, status: 404, file: null}
+  - {path: /.well-known/openid-configuration, status: 404, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+  - {path: /.well-known/api-catalog, status: 404, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 403, file: null}
+  - {path: /.well-known/agent-card.json, status: 403, file: null}
+  - {path: /.well-known/agent.json, status: 403, file: null}
+  - {path: /.well-known/aauth-resource.json, status: 403, file: null}
+  - {path: /.well-known/apis.json, status: 403, file: null}
+  - {path: /apis.json, status: 403, file: null}
+  - {path: /apis.yml, status: 403, file: null}
+  - {path: /llms.txt, status: 404, file: null}
